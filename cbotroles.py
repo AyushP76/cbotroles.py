@@ -71,7 +71,7 @@ def main():
         raw=raw.lower()
 
     except:
-        print("Sorry no wikipedia data available for: ",topic + ". Try Again!!!")
+        print("Sorry no data available for: ",topic + ". Try Again!!!")
         main()
 
     global sent_tokens
@@ -88,12 +88,12 @@ def main():
         if(user_response!='bye' and user_response!='new'):
             if(user_response in ['thanks', 'thank you', 'thanx', 'thnx']):
                 flag=False
-                print("Wiki: You are welcome.")
+                print("Cbot: You are welcome.")
             else:
                 if(greeting(user_response)!=None):
-                    print("Wiki: "+greeting(user_response))
+                    print("Cbot: "+greeting(user_response))
                 else:
-                    print("Wiki: ",end="")
+                    print("Cbot: ",end="")
                     print(response(user_response))
                     sent_tokens.remove(user_response)
 
@@ -102,7 +102,7 @@ def main():
 
         else:
             flag=False
-            print("Wiki: Bye!!! See you soon.. :) ")
+            print("Cbot: Bye!!! See you soon.. :) ")
             break
 
 if __name__ == '__main__':
