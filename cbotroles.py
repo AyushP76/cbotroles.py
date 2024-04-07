@@ -9,10 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from wikipedia import page
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplit
-#uncomment these 3 lines of code for your first use
-# nltk.download('punkt') 
-# nltk.download('wordnet') 
-# nltk.download('omw-1.4'
+# read readme before use this code
 
 sent_tokens= []
 word_tokens= []
