@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from wikipedia import page
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplit
-# read readme before use this code cbotroles.py
+
 
 sent_tokens= []
 word_tokens= []
@@ -17,14 +17,12 @@ word_tokens= []
 GREETING_INPUTS = ("hello", "yo", "hi", "greetings", "sup", "what's up", "wassup", "hey", "namaste")
 GREETING_RESPONSES = ["hi", "nice to meet you..", "hey", "*nods*", "hi there", "hello", 'yes..?', 'greetings..']
 
-# Checking for greetings
 def greeting(sentence):
     for word in sentence.split():
         if word.lower() in GREETING_INPUTS:
             return random.choice(GREETING_RESPONSES)
 
 
-# Generating response
 def response(user_response):
     robo_response=''
     sent_tokens.append(user_response)
@@ -42,17 +40,14 @@ def response(user_response):
         robo_response = robo_response+sent_tokens[idx]
         return robo_response
 
-#Lemmatizing the data
 def LemTokens(tokens):
     lemmer = nltk.stem.WordNetLemmatizer()
     return [lemmer.lemmatize(token) for token in tokens]
 
-#Normalising data by removing punctuations
 def LemNormalize(text):
     remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
     return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
 
-#Main Method
 def main():
     flag=True
     print("\nHi, Enter the role you are asking for. Type 'Bye' to exit. Type 'New' to start new topic queries.")
