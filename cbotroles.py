@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from wikipedia import page
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplit
-# read readme before use this code
+# read readme before use this code cbotroles.py
 
 sent_tokens= []
 word_tokens= []
