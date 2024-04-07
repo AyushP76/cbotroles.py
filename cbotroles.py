@@ -56,7 +56,7 @@ def main():
     print("\nCollecting data...")
     print("******************")
 
-    #Fetching data from wikipedia
+    
     try:
         raw=page(topic)
         raw=raw.content
